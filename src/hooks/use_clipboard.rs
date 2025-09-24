@@ -65,7 +65,7 @@ pub fn use_clipboard() -> UseClipboard {
         None => {
             let clipboard_signal =
                 Signal::new_in_scope(ClipboardContext::new().ok(), ScopeId::ROOT);
-            provide_root_context(clipboard_signal)
+            dioxus_core::provide_root_context(clipboard_signal)
         }
     };
     UseClipboard { clipboard }
